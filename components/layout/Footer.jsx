@@ -3,7 +3,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="bg-background border-t border-t-accent py-16">
+    <footer className="border-t border-bg-border bg-bg-void/85 py-16">
       <section className="mx-auto max-w-7xl px-4">
 
         <div className="grid gap-12 md:grid-cols-4">
@@ -16,7 +16,7 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold">Platform</h3>
+            <h3 className="font-dm-mono text-[11px] font-medium uppercase tracking-[0.15em] text-text-muted">Platform</h3>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
               <Link href="/courses" className="hover:text-foreground transition-colors">
                 Courses
@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold">Resources</h3>
+            <h3 className="font-dm-mono text-[11px] font-medium uppercase tracking-[0.15em] text-text-muted">Resources</h3>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
               <Link href="/" className="hover:text-foreground transition-colors">
                 Help Center
@@ -46,7 +46,7 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold">Legal</h3>
+            <h3 className="font-dm-mono text-[11px] font-medium uppercase tracking-[0.15em] text-text-muted">Legal</h3>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
               <Link href="/" className="hover:text-foreground transition-colors">
                 Privacy Policy
@@ -59,9 +59,8 @@ const Footer = () => {
 
         </div>
 
-        <div className="mt-16 border-t border-border pt-6 text-sm text-muted-foreground flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <p>© 2026 Île-Ìwé. All rights reserved.</p>
-          <p>Built for focused learners.</p>
+        <div className="mt-16 border-t border-border pt-6 text-sm text-muted-foreground text-center">
+          <h2 className="text-7xl font-black tracking-tight text-text-primary md:text-9xl"> Île-Ìwé </h2>
         </div>
 
       </section>

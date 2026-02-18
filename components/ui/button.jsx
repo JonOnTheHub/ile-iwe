@@ -1,34 +1,42 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+const variantStyles = {
+    primary:
+        "inline-flex items-center gap-1.5 rounded-lg bg-purple-vivid px-4 py-2 text-sm font-semibold font-syne text-white transition-colors hover:bg-purple-bright",
+    secondary:
+        "inline-flex items-center gap-1.5 rounded-lg border border-bg-border bg-bg-surface px-4 py-2 text-sm font-semibold font-syne text-text-primary transition-colors hover:border-purple-border",
+    ghost:
+        "inline-flex items-center gap-1.5 rounded-lg border border-bg-border/60 bg-bg-raised/30 px-4 py-2 text-sm font-semibold font-syne text-text-secondary backdrop-blur-sm transition-all hover:border-purple-border/50 hover:bg-bg-raised/60 hover:text-text-primary",
+    destructive:
+        "inline-flex items-center gap-1.5 rounded-lg bg-error px-4 py-2 text-sm font-semibold font-syne text-white transition-opacity hover:opacity-80",
+};
+
 export default function Button({
     href,
     children,
-    variant = "default",
-    withIcon = true,
+    variant = "primary",
+    withIcon = false,
+    onClick,
+    type = "button",
     className = "",
 }) {
-    const variantStyles = {
-        default:
-            "rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold font-syne text-primary-foreground transition-opacity hover:opacity-90",
-        destructive:
-            "rounded-lg bg-destructive px-6 py-2.5 text-sm font-semibold font-syne text-primary-foreground transition-opacity hover:opacity-80",
-        ghost:
-            "rounded-lg bg-transparent px-6 py-2.5 text-sm font-semibold font-syne text-foreground/90 hover:bg-background/50 transition",
-        outline:
-            "rounded-lg border border-primary px-6 py-2.5 text-sm font-semibold font-syne text-primary-foreground hover:bg-primary/10 transition",
-        noIcon:
-            "rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold font-syne text-primary-foreground transition-opacity hover:opacity-90",
-    };
+    const classes = `${variantStyles[variant] ?? variantStyles.primary} ${className}`;
 
-    const baseClass = variantStyles[variant] || variantStyles.default;
+    const content = (
+        <>
+            {children}
+            {withIcon && <ArrowRight className="h-4 w-4" aria-hidden="true" />}
+        </>
+    );
+
+    if (href) {
+        return <Link href={href} className={classes}>{content}</Link>;
+    }
 
     return (
-        <Link href={href} className={`${baseClass} ${className}`}>
-            {children}
-            {withIcon && variant !== "noIcon" && (
-                <ArrowRight className="w-4 h-4 ml-1 inline-block" />
-            )}
-        </Link>
+        <button type={type} onClick={onClick} className={classes}>
+            {content}
+        </button>
     );
 }
