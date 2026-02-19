@@ -49,15 +49,15 @@ const courses = [
   },
   {
     id: 5,
-    title: "Intro to Cybersecurity",
-    instructor: "Fatima Al-Hassan",
-    category: "Cybersecurity",
+    title: "Frontend Development with Next.js",
+    instructor: "Daniel T. Dada",
+    category: "Web Development",
     duration: "10 hours",
-    description: "Understand the fundamentals of cybersecurity: threats, encryption, network security, and ethical hacking basics. Includes hands-on labs and real-world case studies.",
+    description: "Learn to build modern, performant web applications with Next.js. Covers routing, data fetching, API routes, and deployment strategies.",
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop",
     price: 34.99,
     rating: 4.5,
-    keywords: ["security", "hacking", "encryption", "networking", "ethical hacking"]
+    keywords: ["nextjs", "frontend", "react", "routing", "deployment"]
   },
   {
     id: 6,
