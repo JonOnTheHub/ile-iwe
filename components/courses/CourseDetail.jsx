@@ -25,7 +25,7 @@ const CourseDetail = ({ course }) => {
     return (
         <div className="mx-auto max-w-7xl px-4 py-10 space-y-10">
             {/* hero */}
-            <div className="relative w-full h-[480px] rounded-3xl overflow-hidden">
+            <div className="relative w-full h-120 rounded-3xl overflow-hidden">
                 <Image src={image} alt={title} fill className="object-cover" priority />
 
                 {/* gradient for accessibility */}

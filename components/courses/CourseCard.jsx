@@ -45,7 +45,7 @@ const CourseCard = ({ course }) => {
       </div>
 
       {/* bottom */}
-      <div className="flex items-center justify-between px-6 py-[18px]">
+      <div className="flex items-center justify-between px-6 py-4.5">
         <div className="flex-1 mr-4">
           <div className="flex justify-between font-dm-mono text-[10px] text-text-muted mb-1.5">
             <span>Rating</span>
