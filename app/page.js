@@ -86,7 +86,7 @@ export default function Home() {
       <div className="mx-auto max-w-7xl px-4 py-10 space-y-24">
         {/* ── Hero ── */}
         <section
-          className="fade-up relative overflow-hidden rounded-3xl border border-bg-border p-12 md:p-20 min-h-130 flex items-center"
+          className="fade-up relative overflow-hidden rounded-3xl border border-bg-border p-8 sm:p-12 md:p-20 min-h-130 flex items-center"
           style={{ animationDelay: "0ms" }}
         >
           <div className="absolute inset-0 pointer-events-none">
@@ -94,10 +94,10 @@ export default function Home() {
               className="absolute inset-0"
               style={{
                 background: `
-                  radial-gradient(ellipse at 85% 40%, rgba(157,23,77,0.18) 0%, transparent 55%),
-                  radial-gradient(ellipse at 15% 85%, rgba(212,168,67,0.15) 0%, transparent 45%),
-                  radial-gradient(ellipse at 50% 0%, rgba(107,16,57,0.12) 0%, transparent 50%)
-                `,
+          radial-gradient(ellipse at 85% 40%, rgba(157,23,77,0.18) 0%, transparent 55%),
+          radial-gradient(ellipse at 15% 85%, rgba(212,168,67,0.15) 0%, transparent 45%),
+          radial-gradient(ellipse at 50% 0%, rgba(107,16,57,0.12) 0%, transparent 50%)
+        `,
               }}
             />
             <svg
@@ -138,8 +138,9 @@ export default function Home() {
             </svg>
           </div>
 
-          <div className="relative z-10 max-w-3xl">
-            <div className="inline-flex items-center gap-2 mb-6">
+          <div className="relative z-10 w-full max-w-3xl">
+            {/* eyebrow — hides on small screens */}
+            <div className="hidden sm:inline-flex items-center gap-2 mb-6">
               <div
                 className="h-px w-8"
                 style={{ backgroundColor: "var(--color-purple-vivid)" }}
@@ -149,7 +150,8 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="font-syne font-extrabold leading-[1.02] tracking-[-0.025em] text-left mb-6 text-5xl sm:text-6xl md:text-7xl">
+            {/* heading — centered on mobile, left on md+ */}
+            <h1 className="font-syne font-extrabold leading-[1.02] tracking-[-0.025em] text-center sm:text-left mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               Build faster. <br />
               Ship{" "}
               <span
@@ -164,12 +166,14 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="text-base text-text-secondary font-light mb-10 max-w-md leading-relaxed">
+            {/* Subtext — centered on mobile, left on sm+ */}
+            <p className="text-base text-text-secondary font-light mb-10 max-w-md leading-relaxed text-center sm:text-left mx-auto sm:mx-0">
               Learn on-demand tech skills through projects that actually
               challenge you. No hand-holding — just craft.
             </p>
 
-            <div className="flex flex-wrap gap-3">
+            {/* Buttons — space-around on mobile, left-aligned row on sm+ */}
+            <div className="flex justify-around sm:justify-start sm:flex-wrap gap-3">
               <Button href="/courses" variant="primary" withIcon={true}>
                 Browse Courses
               </Button>
@@ -179,6 +183,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Ghost wordmark — lg only */}
           <div
             className="absolute right-0 bottom-0 font-syne font-extrabold leading-none select-none pointer-events-none hidden lg:block"
             style={{

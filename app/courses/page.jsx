@@ -1,10 +1,8 @@
+'use client'
+
+import { useState } from 'react'
 import CourseGrid from '@/components/courses/CourseGrid'
 import courses from '@/data/courses'
-
-export const metadata = {
-    title: "Courses — Île-Ìwé",
-    description: "Browse all courses across categories.",
-}
 
 const categories = [
     "All", "Web Development", "Data Science", "Design",
@@ -13,10 +11,17 @@ const categories = [
 ]
 
 const CoursePage = () => {
+    const [active, setActive] = useState('All')
+
+    const filteredCourses = active === 'All'
+        ? courses
+        : courses.filter((c) => c.category === active)
+    // when active is all, all courses, else courses filtered by category
+
     return (
         <div className="mx-auto max-w-7xl px-4 py-10 space-y-10">
 
-            {/* header */}
+            {/* Header */}
             <div
                 style={{
                     opacity: 0,
@@ -28,11 +33,11 @@ const CoursePage = () => {
                     All Courses
                 </h1>
                 <p className="text-text-secondary text-sm">
-                    {courses.length} courses across 8 categories. Something for every level.
+                    {filteredCourses.length} course{filteredCourses.length !== 1 ? 's' : ''}{active !== 'All' ? ` in ${active}` : ' across 8 categories. Something for every level.'}
                 </p>
             </div>
 
-            {/* filters */}
+            {/* Filters */}
             <div
                 className="flex flex-wrap gap-2"
                 style={{
@@ -42,17 +47,23 @@ const CoursePage = () => {
                 }}
             >
                 {categories.map((category) => (
-                    <span
+                    <button
                         key={category}
-                        className="font-dm-mono text-[11px] tracking-[0.05em] px-3 py-1.5 rounded-lg border border-bg-border bg-bg-raised text-text-muted cursor-pointer hover:border-purple-border hover:text-text-primary transition-colors duration-100"
+                        onClick={() => setActive(category)}
+                        className="font-dm-mono text-[11px] tracking-[0.05em] px-3 py-1.5 rounded-lg border transition-colors duration-100"
+                        style={{
+                            backgroundColor: active === category ? 'var(--color-purple-soft)' : 'var(--color-bg-raised)',
+                            borderColor: active === category ? 'var(--color-purple-border)' : 'var(--color-bg-border)',
+                            color: active === category ? '#c4748e' : 'var(--color-text-muted)',
+                        }}
                     >
                         {category}
-                    </span>
+                    </button>
                 ))}
             </div>
 
-            {/* grid */}
-            <CourseGrid courses={courses} />
+            {/* Grid */}
+            <CourseGrid courses={filteredCourses} />
 
         </div>
     )
