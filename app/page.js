@@ -3,9 +3,10 @@ import Button from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
 import courses from "@/data/courses";
+import StatCard from "@/components/ui/StatCard";
 
 const Home = () => {
-  const featured = courses.filter((course) => [1, 5, 18].includes(course.id));
+  const featured = courses.filter((course) => [1, 5, 11].includes(course.id));
 
   const stats = [
     { value: "20+", label: "Courses" },
@@ -104,17 +105,7 @@ const Home = () => {
       <section>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {stats.map(({ value, label }) => (
-            <div
-              key={label}
-              className="rounded-xl border border-bg-border bg-bg-raised p-6"
-            >
-              <p className="font-syne font-extrabold text-4xl text-text-primary mb-1">
-                {value}
-              </p>
-              <p className="font-dm-mono text-[11px] text-text-muted uppercase tracking-[0.15em]">
-                {label}
-              </p>
-            </div>
+            <StatCard key={label} value={value} label={label} />
           ))}
         </div>
       </section>

@@ -15,7 +15,7 @@ const Header = () => {
   ]
 
   return (
-    <section className='border-b border-bg-border bg-bg-void/85 backdrop-blur-sm sticky top-0 z-[200]'>
+    <section className='border-b border-bg-border bg-bg-void/85 backdrop-blur-md sticky top-0 z-200'>
       <header className="mx-auto flex max-w-7xl items-center justify-between p-4">
 
         <Link href="/" className="font-syne text-2xl font-black tracking-tight">

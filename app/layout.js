@@ -2,6 +2,7 @@ import Header from "@/components/layout/Header";
 import "./globals.css";
 import { Syne, DM_Sans, DM_Mono } from "next/font/google";
 import Footer from "@/components/layout/Footer";
+import { AppProvider } from "@/context/AppContext";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -32,15 +33,15 @@ export default function RootLayout({ children }) {
       className={`${syne.variable} ${dmSans.variable} ${dmMono.variable}`}
     >
       <body className="min-h-screen flex flex-col bg-background text-foreground antialiased">
+        <AppProvider>
+          <Header className="sticky top-0 z-50" />
 
-        <Header className="sticky top-0 z-50" />
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
 
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
-
-        <Footer className="mt-auto" />
-
+          <Footer className="mt-auto" />
+        </AppProvider>
       </body>
     </html>
   );

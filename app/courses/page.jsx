@@ -4,7 +4,7 @@ import courses from '@/data/courses';
 
 export const metadata = {
     title: "Courses — Île-Ìwé",
-    description: "Browse all courses across 8 categories.",
+    description: "Browse all courses across categories.",
 };
 
 const CoursePage = () => {
@@ -35,7 +35,7 @@ const CoursePage = () => {
             </div>
 
             {/* category filter — static, filter later abeg */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-4">
                 {categories.map((category) => (
                     <span
                         key={category}

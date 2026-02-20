@@ -10,16 +10,16 @@ const CourseCard = ({ course }) => {
       {/* top */}
       <div className="relative bg-bg-surface p-6 border-b border-bg-border overflow-hidden">
 
-        {/* purple glow */}
+        {/* purple glow — top-right per spec */}
         <div
           className="absolute pointer-events-none"
           style={{
-            bottom: '-30px',
-            right: '-30px',
+            top: '-20px',
+            right: '-20px',
             width: '100px',
             height: '100px',
             background: 'radial-gradient(circle, var(--color-purple-vivid) 0%, transparent 70%)',
-            opacity: 0.25,
+            opacity: 0.12,
           }}
         />
 
@@ -35,21 +35,17 @@ const CourseCard = ({ course }) => {
           {category}
         </div>
 
-        {/* title */}
         <h3 className="font-syne font-bold text-lg text-text-primary leading-snug mb-1.5">
           {title}
         </h3>
 
-        {/* instructor + duration */}
         <p className="text-[13px] text-text-secondary font-light">
           {instructor} · {duration}
         </p>
       </div>
 
-      {/* bottom section */}
+      {/* bottom */}
       <div className="flex items-center justify-between px-6 py-[18px]">
-
-        {/* rating + price */}
         <div className="flex-1 mr-4">
           <div className="flex justify-between font-dm-mono text-[10px] text-text-muted mb-1.5">
             <span>Rating</span>
@@ -65,18 +61,13 @@ const CourseCard = ({ course }) => {
             />
           </div>
           <div className="mt-2 font-dm-mono text-[10px] text-text-muted">
-            {price === 0 ? (
-              <span className="text-success">Free</span>
-            ) : (
-              <span>${price}</span>
-            )}
+            {price === 0 ? <span className="text-success">Free</span> : <span>${price}</span>}
           </div>
         </div>
 
         <Button href={`/courses/${id}`} variant="primary" withIcon={false}>
           View Course
         </Button>
-
       </div>
     </div>
   );
