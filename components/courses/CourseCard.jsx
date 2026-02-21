@@ -26,10 +26,7 @@ const CourseCard = ({ course }) => {
   return (
     <div
       ref={cardRef}
-      className="rounded-[14px] border border-bg-border bg-bg-raised overflow-hidden group"
-      style={{
-        transition: 'transform 200ms ease-out, box-shadow 200ms ease-out, border-color 200ms ease-out',
-      }}
+      className="rounded-[14px] border border-bg-border bg-bg-raised overflow-hidden group transition duration-200 ease-out"
       onMouseEnter={e => {
         e.currentTarget.style.transform = 'scale(1.015)'
         e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.4)'
@@ -44,24 +41,12 @@ const CourseCard = ({ course }) => {
       {/* top */}
       <div className="relative bg-bg-surface p-6 border-b border-bg-border overflow-hidden">
         <div
-          className="absolute pointer-events-none"
-          style={{
-            top: '-20px',
-            right: '-20px',
-            width: '100px',
-            height: '100px',
-            background: 'radial-gradient(circle, var(--color-purple-vivid) 0%, transparent 70%)',
-            opacity: 0.12,
-          }}
+          className="absolute pointer-events-none -top-5 -right-5 w-25 h-25 opacity-[0.12] bg-[radial-gradient(circle,var(--color-purple-vivid)_0%,transparent_70%)]"
+
         />
 
         <div
-          className="inline-flex items-center font-dm-mono text-[10px] tracking-[0.05em] px-2 py-0.5 rounded mb-3.5"
-          style={{
-            backgroundColor: 'var(--color-purple-soft)',
-            border: '1px solid var(--color-purple-border)',
-            color: '#c4748e',
-          }}
+          className="inline-flex items-center font-dm-mono text-[10px] tracking-[0.05em] px-2 py-0.5 rounded mb-3.5 bg-purple-soft border border-purple-border text-[#c4748e]"
         >
           {category}
         </div>
@@ -82,13 +67,11 @@ const CourseCard = ({ course }) => {
             <span>Rating</span>
             <span>{rating} / 5</span>
           </div>
-          <div className="h-1 rounded-full overflow-hidden" style={{ backgroundColor: 'var(--color-bg-overlay)' }}>
+          <div className="h-1 rounded-full overflow-hidden bg-bg-overlay">
             <div
-              className="h-full rounded-full"
+              className="h-full rounded-full bg-purple-vivid transition-width duration-800 ease-out"
               style={{
                 width: `${barWidth}%`,
-                backgroundColor: 'var(--color-purple-vivid)',
-                transition: 'width 800ms ease-out',
               }}
             />
           </div>

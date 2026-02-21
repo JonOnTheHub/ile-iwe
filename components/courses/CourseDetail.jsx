@@ -30,31 +30,19 @@ const CourseDetail = ({ course }) => {
 
                 {/* gradient for accessibility */}
                 <div
-                    className="absolute inset-0"
-                    style={{
-                        background:
-                            "linear-gradient(to top, rgba(8,8,7,0.95) 0%, rgba(8,8,7,0.4) 50%, transparent 100%)",
-                    }}
+                    className="absolute inset-0 bg-linear-to-t from-[rgba(8,8,7,0.95)] via-[rgba(8,8,7,0.4)] to-transparent"
                 />
 
                 {/* purple accent */}
                 <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                        background:
-                            "radial-gradient(ellipse at 90% 10%, rgba(157,23,77,0.2) 0%, transparent 50%)",
-                    }}
+                    className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_90%_10%,rgba(157,23,77,0.2)_0%,transparent_50%)]"
                 />
 
                 {/* overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-10">
                     <div
-                        className="inline-flex items-center font-dm-mono text-[10px] tracking-[0.05em] px-2 py-0.5 rounded mb-4"
-                        style={{
-                            backgroundColor: "var(--color-purple-soft)",
-                            border: "1px solid var(--color-purple-border)",
-                            color: "#c4748e",
-                        }}
+                        className="inline-flex items-center font-dm-mono text-[10px] tracking-[0.05em] px-2 py-0.5 rounded mb-4 bg-purple-soft border border-purple-border text-[#c4748e]"
+
                     >
                         {category}
                     </div>
@@ -97,12 +85,7 @@ const CourseDetail = ({ course }) => {
                         {keywords.map((keyword) => (
                             <span
                                 key={keyword}
-                                className="font-dm-mono text-[10px] tracking-[0.05em] px-2 py-0.5 rounded"
-                                style={{
-                                    backgroundColor: "var(--color-purple-soft)",
-                                    border: "1px solid var(--color-purple-border)",
-                                    color: "#c4748e",
-                                }}
+                                className="font-dm-mono text-[10px] tracking-[0.05em] px-2 py-0.5 rounded bg-purple-soft border border-purple-border text-[#c4748e]"
                             >
                                 {keyword}
                             </span>
@@ -112,11 +95,7 @@ const CourseDetail = ({ course }) => {
 
                 {/* Sticky action panel */}
                 <div
-                    className="rounded-2xl border p-6 space-y-4 h-fit sticky top-24"
-                    style={{
-                        backgroundColor: "var(--color-bg-raised)",
-                        border: "1px solid var(--color-bg-border)",
-                    }}
+                    className="rounded-2xl border p-6 space-y-4 h-fit sticky top-24 bg-bg-raised border-bg-border"
                 >
                     <p className="font-syne font-extrabold text-3xl text-text-primary">
                         {price === 0 ? "Free" : `$${price}`}
@@ -141,8 +120,7 @@ const CourseDetail = ({ course }) => {
                         </Button>
                     </div>
                     <div
-                        className="pt-4 border-t space-y-2"
-                        style={{ borderColor: "var(--color-bg-border)" }}
+                        className="pt-4 border-t space-y-2 border-bg-border"
                     >
                         {[
                             ["Instructor", instructor],

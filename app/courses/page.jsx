@@ -22,13 +22,7 @@ const CoursePage = () => {
         <div className="mx-auto max-w-7xl px-4 py-10 space-y-10">
 
             {/* Header */}
-            <div
-                style={{
-                    opacity: 0,
-                    animation: 'fadeUp 300ms ease-out forwards',
-                    animationDelay: '0ms',
-                }}
-            >
+            <div className="opacity-0 animate-[fadeUp_300ms_ease-out_forwards] delay-0">
                 <h1 className="font-syne font-extrabold text-4xl text-text-primary mb-2">
                     All Courses
                 </h1>
@@ -39,12 +33,7 @@ const CoursePage = () => {
 
             {/* Filters */}
             <div
-                className="flex flex-wrap gap-2"
-                style={{
-                    opacity: 0,
-                    animation: 'fadeUp 300ms ease-out forwards',
-                    animationDelay: '60ms',
-                }}
+                className="flex flex-wrap gap-2 opacity-0 animate-[fadeUp_300ms_ease-out_forwards] delay-0"
             >
                 {categories.map((category) => (
                     <button

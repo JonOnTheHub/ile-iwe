@@ -5,73 +5,73 @@ import Button from "@/components/ui/button";
 import Link from "next/link";
 import courses from "@/data/courses";
 import StatCard from "@/components/ui/StatCard";
+import React from "react";
 
-const featured = courses.filter((course) => [1, 5, 11].includes(course.id));
+const Home = () => {
+  const featured = courses.filter((course) => [1, 5, 11].includes(course.id));
 
-const stats = [
-  { value: "20+", label: "Courses" },
-  { value: "5", label: "Instructors" },
-  { value: "8", label: "Categories" },
-  { value: "100%", label: "Project-based" },
-];
+  const stats = [
+    { value: "20+", label: "Courses" },
+    { value: "5", label: "Instructors" },
+    { value: "8", label: "Categories" },
+    { value: "100%", label: "Project-based" },
+  ];
 
-const categories = [
-  { name: "Web Development", emoji: "🌐" },
-  { name: "Data Science", emoji: "📊" },
-  { name: "Design", emoji: "✏️" },
-  { name: "Backend Development", emoji: "⚙️" },
-  { name: "Cybersecurity", emoji: "🔒" },
-  { name: "DevOps", emoji: "🚀" },
-  { name: "Mobile Development", emoji: "📱" },
-  { name: "AI & Machine Learning", emoji: "🤖" },
-];
+  const categories = [
+    { name: "Web Development", emoji: "🌐" },
+    { name: "Data Science", emoji: "📊" },
+    { name: "Design", emoji: "✏️" },
+    { name: "Backend Development", emoji: "⚙️" },
+    { name: "Cybersecurity", emoji: "🔒" },
+    { name: "DevOps", emoji: "🚀" },
+    { name: "Mobile Development", emoji: "📱" },
+    { name: "AI & Machine Learning", emoji: "🤖" },
+  ];
 
-const steps = [
-  {
-    number: "01",
-    title: "Pick a track",
-    description:
-      "Browse courses across 8 categories. Filter by what you actually want to build.",
-  },
-  {
-    number: "02",
-    title: "Learn by doing",
-    description:
-      "Every course is built around projects. No passive watching — you ship things.",
-  },
-  {
-    number: "03",
-    title: "Earn your cert",
-    description:
-      "Complete a track and get a certificate worth putting on your portfolio.",
-  },
-];
+  const steps = [
+    {
+      number: "01",
+      title: "Pick a track",
+      description:
+        "Browse courses across 8 categories. Filter by what you actually want to build.",
+    },
+    {
+      number: "02",
+      title: "Learn by doing",
+      description:
+        "Every course is built around projects. No passive watching — you ship things.",
+    },
+    {
+      number: "03",
+      title: "Earn your cert",
+      description:
+        "Complete a track and get a certificate worth putting on your portfolio.",
+    },
+  ];
 
-const testimonials = [
-  {
-    quote:
-      "Île-Ìwé is the first platform that made me feel like I was actually building, not just following along.",
-    name: "Jon O.",
-    role: "Backend Developer",
-  },
-  {
-    quote:
-      "Finished the Product Design track in 3 weeks. Got a job offer two months later. The projects made the difference.",
-    name: "Nabil A.",
-    role: "Product Designer",
-  },
-  {
-    quote:
-      "The design of the platform alone made me trust the quality of the content. Knew it was serious from the start.",
-    name: "Dayo S.",
-    role: "Frontend Developer",
-  },
-];
-
-export default function Home() {
+  const testimonials = [
+    {
+      quote:
+        "Île-Ìwé is the first platform that made me feel like I was actually building, not just following along.",
+      name: "Jon O.",
+      role: "Backend Developer",
+    },
+    {
+      quote:
+        "Finished the Product Design track in 3 weeks. Got a job offer two months later. The projects made the difference.",
+      name: "Nabil A.",
+      role: "Product Designer",
+    },
+    {
+      quote:
+        "The design of the platform alone made me trust the quality of the content. Knew it was serious from the start.",
+      name: "Dayo S.",
+      role: "Frontend Developer",
+    },
+  ];
   return (
     <>
-      {/* Keyframes injected once */}
+      {/* keyframes injected once, really could've done it in globals but eh */}
       <style>{`
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(12px); }
@@ -86,8 +86,7 @@ export default function Home() {
       <div className="mx-auto max-w-7xl px-4 py-10 space-y-24">
         {/* ── Hero ── */}
         <section
-          className="fade-up relative overflow-hidden rounded-3xl border border-bg-border p-8 sm:p-12 md:p-20 min-h-130 flex items-center"
-          style={{ animationDelay: "0ms" }}
+          className="fade-up relative overflow-hidden rounded-3xl border border-bg-border p-8 sm:p-12 md:p-20 min-h-130 flex items-center delay-0"
         >
           <div className="absolute inset-0 pointer-events-none">
             <div
@@ -142,27 +141,21 @@ export default function Home() {
             {/* eyebrow — hides on small screens */}
             <div className="hidden sm:inline-flex items-center gap-2 mb-6">
               <div
-                className="h-px w-8"
-                style={{ backgroundColor: "var(--color-purple-vivid)" }}
+                className="h-px w-8 bg-purple-vivid"
               />
               <span className="font-dm-mono text-[11px] tracking-[0.2em] uppercase text-text-muted">
-                Tech Skills Platform
+                Accelerate Your Skills
               </span>
             </div>
 
             {/* heading — centered on mobile, left on md+ */}
             <h1 className="font-syne font-extrabold leading-[1.02] tracking-[-0.025em] text-center sm:text-left mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               Build faster. <br />
-              Ship{" "}
+              Ship with
               <span
-                className="relative inline-block"
-                style={{ color: "var(--color-gold)" }}
+                className="relative inline-block text-gold"
               >
-                with confidence.
-                <span
-                  className="absolute bottom-1 left-0 w-full h-px"
-                  style={{ backgroundColor: "var(--color-gold-dim)" }}
-                />
+                confidence.
               </span>
             </h1>
 
@@ -183,18 +176,18 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Ghost wordmark — lg only */}
+          {/* Ghost wordmark — big screens only */}
           <div
             className="absolute right-0 bottom-0 font-syne font-extrabold leading-none select-none pointer-events-none hidden lg:block"
             style={{
               fontSize: "220px",
               color: "transparent",
-              WebkitTextStroke: "1px rgba(157,23,77,0.08)",
+              WebkitTextStroke: "1px rgba(157,23,77,0.1)",
               letterSpacing: "-0.04em",
             }}
             aria-hidden="true"
           >
-            ÎÌ
+            Ìwé
           </div>
         </section>
 
@@ -219,8 +212,7 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <div
-                  className="h-px w-6"
-                  style={{ backgroundColor: "var(--color-purple-vivid)" }}
+                  className="h-px w-6 bg-purple-vivid"
                 />
                 <span className="font-dm-mono text-[11px] tracking-[0.2em] uppercase text-text-muted">
                   Tracks
@@ -283,8 +275,7 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <div
-                  className="h-px w-6"
-                  style={{ backgroundColor: "var(--color-gold-dim)" }}
+                  className="h-px w-6 bg-gold-dim"
                 />
                 <span className="font-dm-mono text-[11px] tracking-[0.2em] uppercase text-text-muted">
                   Featured
@@ -316,8 +307,7 @@ export default function Home() {
           <div className="mb-14">
             <div className="flex items-center gap-2 mb-3">
               <div
-                className="h-px w-6"
-                style={{ backgroundColor: "var(--color-purple-vivid)" }}
+                className="h-px w-6 bg-purple-vivid"
               />
               <span className="font-dm-mono text-[11px] tracking-[0.2em] uppercase text-text-muted">
                 Process
@@ -350,8 +340,7 @@ export default function Home() {
               >
                 {i < 2 && (
                   <div
-                    className="hidden md:block absolute top-12 -right-2 w-4 h-px z-10"
-                    style={{ backgroundColor: "var(--color-purple-border)" }}
+                    className="hidden md:block absolute top-12 -right-2 w-4 h-px z-10 bg-purple-border"
                   />
                 )}
                 <p
@@ -366,8 +355,7 @@ export default function Home() {
                   {number}
                 </p>
                 <p
-                  className="font-dm-mono text-[11px] tracking-[0.15em] mb-6 relative z-10"
-                  style={{ color: "var(--color-purple-border)" }}
+                  className="font-dm-mono text-[11px] tracking-[0.15em] mb-6 relative z-10 bg-purple-border"
                 >
                   {number}
                 </p>
@@ -387,8 +375,7 @@ export default function Home() {
           <div className="mb-14">
             <div className="flex items-center gap-2 mb-3">
               <div
-                className="h-px w-6"
-                style={{ backgroundColor: "var(--color-purple-vivid)" }}
+                className="h-px w-6 bg-purple-vivid"
               />
               <span className="font-dm-mono text-[11px] tracking-[0.2em] uppercase text-text-muted">
                 Learners
@@ -456,4 +443,6 @@ export default function Home() {
       </div>
     </>
   );
-}
+};
+
+export default Home;

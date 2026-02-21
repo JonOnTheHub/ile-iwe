@@ -44,17 +44,15 @@ const Header = () => {
 
                 {/* sliding underline — active state */}
                 <span
-                  className="absolute bottom-0 left-0 h-0.5 transition-all duration-200 ease-out"
+                  className="absolute bottom-0 left-0 h-0.5 transition-all duration-200 ease-out bg-purple-vivid"
                   style={{
-                    backgroundColor: 'var(--color-purple-vivid)',
                     width: active ? '100%' : '0%',
                   }}
                 />
 
                 {/* hover underline for inactive links */}
                 {!active && (
-                  <span className="absolute bottom-0 left-0 h-0.5 w-0 hover:w-full transition-all duration-200 ease-out"
-                    style={{ backgroundColor: 'var(--color-purple-border)' }}
+                  <span className="absolute bottom-0 left-0 h-0.5 w-0 hover:w-full transition-all duration-200 ease-out bg-purple-border"
                   />
                 )}
               </Link>
