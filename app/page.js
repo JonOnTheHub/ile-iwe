@@ -8,7 +8,7 @@ import StatCard from "@/components/ui/StatCard";
 import React from "react";
 
 const Home = () => {
-  const featured = courses.filter((course) => [1, 5, 11].includes(course.id));
+  const featured = courses.filter((course) => [3, 5, 18].includes(course.id));
 
   const stats = [
     { value: "20+", label: "Courses" },
@@ -85,9 +85,7 @@ const Home = () => {
 
       <div className="mx-auto max-w-7xl px-4 py-10 space-y-24">
         {/* ── Hero ── */}
-        <section
-          className="fade-up relative overflow-hidden rounded-3xl border border-bg-border p-8 sm:p-12 md:p-20 min-h-130 flex items-center delay-0"
-        >
+        <section className="fade-up relative overflow-hidden rounded-3xl border border-bg-border p-8 sm:p-12 md:p-20 min-h-130 flex items-center delay-0">
           <div className="absolute inset-0 pointer-events-none">
             <div
               className="absolute inset-0"
@@ -140,9 +138,7 @@ const Home = () => {
           <div className="relative z-10 w-full max-w-3xl">
             {/* eyebrow — hides on small screens */}
             <div className="hidden sm:inline-flex items-center gap-2 mb-6">
-              <div
-                className="h-px w-8 bg-purple-vivid"
-              />
+              <div className="h-px w-8 bg-purple-vivid" />
               <span className="font-dm-mono text-[11px] tracking-[0.2em] uppercase text-text-muted">
                 Accelerate Your Skills
               </span>
@@ -152,20 +148,18 @@ const Home = () => {
             <h1 className="font-syne font-extrabold leading-[1.02] tracking-[-0.025em] text-center sm:text-left mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               Build faster. <br />
               Ship with
-              <span
-                className="relative inline-block text-gold"
-              >
+              <span className="relative inline-block text-gold">
                 confidence.
               </span>
             </h1>
 
-            {/* Subtext — centered on mobile, left on sm+ */}
+            {/* subtext — centered on mobile, left on sm+ */}
             <p className="text-base text-text-secondary font-light mb-10 max-w-md leading-relaxed text-center sm:text-left mx-auto sm:mx-0">
               Learn on-demand tech skills through projects that actually
               challenge you. No hand-holding — just craft.
             </p>
 
-            {/* Buttons — space-around on mobile, left-aligned row on sm+ */}
+            {/* buttons — spacearound on mobile, left-aligned row on sm+ */}
             <div className="flex justify-around sm:justify-start sm:flex-wrap gap-3">
               <Button href="/courses" variant="primary" withIcon={true}>
                 Browse Courses
@@ -176,7 +170,7 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Ghost wordmark — big screens only */}
+          {/* ghost wordmark — big screens only */}
           <div
             className="absolute right-0 bottom-0 font-syne font-extrabold leading-none select-none pointer-events-none hidden lg:block"
             style={{
@@ -191,7 +185,7 @@ const Home = () => {
           </div>
         </section>
 
-        {/* ── Stats ── */}
+        {/* ── stats ── */}
         <section>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {stats.map(({ value, label }, i) => (
@@ -199,6 +193,7 @@ const Home = () => {
                 key={label}
                 className="fade-up"
                 style={{ animationDelay: `${i * 60}ms` }}
+                // staggered appearance, index x 60ms, subtle sha
               >
                 <StatCard value={value} label={label} />
               </div>
@@ -206,14 +201,12 @@ const Home = () => {
           </div>
         </section>
 
-        {/* ── Categories ── */}
+        {/* ── categories ── */}
         <section>
           <div className="flex items-end justify-between mb-10">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <div
-                  className="h-px w-6 bg-purple-vivid"
-                />
+                <div className="h-px w-6 bg-purple-vivid" />
                 <span className="font-dm-mono text-[11px] tracking-[0.2em] uppercase text-text-muted">
                   Tracks
                 </span>
@@ -232,22 +225,9 @@ const Home = () => {
               <Link
                 key={name}
                 href={`/courses?category=${encodeURIComponent(name)}`}
-                className="fade-up group relative flex items-center gap-3 rounded-xl border border-bg-border bg-bg-raised px-4 py-4 overflow-hidden"
+                className="fade-up group relative flex items-center gap-3 rounded-xl border border-bg-border bg-bg-raised px-4 py-4 overflow-hidden hover:border-purple-border hover:scale-[1.01] transition-all duration-200"
                 style={{
                   animationDelay: `${i * 60}ms`,
-                  transition:
-                    "border-color 200ms ease-out, background-color 200ms ease-out",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor =
-                    "var(--color-purple-border)";
-                  e.currentTarget.style.backgroundColor =
-                    "var(--color-bg-surface)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "var(--color-bg-border)";
-                  e.currentTarget.style.backgroundColor =
-                    "var(--color-bg-raised)";
                 }}
               >
                 <div
@@ -274,9 +254,7 @@ const Home = () => {
           <div className="flex items-end justify-between mb-10">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <div
-                  className="h-px w-6 bg-gold-dim"
-                />
+                <div className="h-px w-6 bg-gold-dim" />
                 <span className="font-dm-mono text-[11px] tracking-[0.2em] uppercase text-text-muted">
                   Featured
                 </span>
@@ -306,9 +284,7 @@ const Home = () => {
         <section>
           <div className="mb-14">
             <div className="flex items-center gap-2 mb-3">
-              <div
-                className="h-px w-6 bg-purple-vivid"
-              />
+              <div className="h-px w-6 bg-purple-vivid" />
               <span className="font-dm-mono text-[11px] tracking-[0.2em] uppercase text-text-muted">
                 Process
               </span>
@@ -322,27 +298,13 @@ const Home = () => {
             {steps.map(({ number, title, description }, i) => (
               <div
                 key={number}
-                className="fade-up relative rounded-2xl border border-bg-border bg-bg-raised p-8 overflow-hidden"
+                className="fade-up relative rounded-2xl border border-bg-border bg-bg-raised p-8 overflow-hidden hover:border-purple-border hover:scale-[1.01] transition-all duration-200"
                 style={{
                   animationDelay: `${i * 60}ms`,
-                  transition:
-                    "border-color 200ms ease-out, transform 200ms ease-out",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor =
-                    "var(--color-purple-border)";
-                  e.currentTarget.style.transform = "scale(1.015)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "var(--color-bg-border)";
-                  e.currentTarget.style.transform = "scale(1)";
                 }}
               >
-                {i < 2 && (
-                  <div
-                    className="hidden md:block absolute top-12 -right-2 w-4 h-px z-10 bg-purple-border"
-                  />
-                )}
+                <div className="hidden md:block absolute top-12 -right-2 w-4 h-px z-10 bg-purple-border" />
+
                 <p
                   className="absolute top-4 right-6 font-syne font-extrabold select-none pointer-events-none leading-none"
                   style={{
@@ -355,7 +317,10 @@ const Home = () => {
                   {number}
                 </p>
                 <p
-                  className="font-dm-mono text-[11px] tracking-[0.15em] mb-6 relative z-10 bg-purple-border"
+                  className="font-dm-mono text-[11px] tracking-[0.15em] mb-6 relative z-10 "
+                  style={{
+                    color: "var(--color-purple-border)",
+                  }}
                 >
                   {number}
                 </p>
@@ -374,9 +339,7 @@ const Home = () => {
         <section className="pb-10">
           <div className="mb-14">
             <div className="flex items-center gap-2 mb-3">
-              <div
-                className="h-px w-6 bg-purple-vivid"
-              />
+              <div className="h-px w-6 bg-purple-vivid" />
               <span className="font-dm-mono text-[11px] tracking-[0.2em] uppercase text-text-muted">
                 Learners
               </span>
@@ -390,20 +353,9 @@ const Home = () => {
             {testimonials.map(({ quote, name, role }, i) => (
               <div
                 key={name}
-                className="fade-up relative rounded-2xl border border-bg-border bg-bg-raised p-8 flex flex-col justify-between gap-8 overflow-hidden"
+                className="fade-up relative rounded-2xl border border-bg-border bg-bg-raised p-8 flex flex-col justify-between gap-8 overflow-hidden hover:border-purple-border hover:scale-[1.01] transition-all duration-200"
                 style={{
                   animationDelay: `${i * 60}ms`,
-                  transition:
-                    "border-color 200ms ease-out, transform 200ms ease-out",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor =
-                    "var(--color-purple-border)";
-                  e.currentTarget.style.transform = "scale(1.015)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "var(--color-bg-border)";
-                  e.currentTarget.style.transform = "scale(1)";
                 }}
               >
                 <span
@@ -417,14 +369,7 @@ const Home = () => {
                   &quot;{quote}&quot;
                 </p>
                 <div className="flex items-center gap-3 relative z-10">
-                  <div
-                    className="w-8 h-8 rounded-full flex items-center justify-center font-syne font-bold text-xs shrink-0"
-                    style={{
-                      backgroundColor: "var(--color-purple-soft)",
-                      border: "1px solid var(--color-purple-border)",
-                      color: "#c4748e",
-                    }}
-                  >
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-syne font-bold text-sm bg-purple-soft border border-purple-border text-[#c4748e]">
                     {name.charAt(0)}
                   </div>
                   <div>

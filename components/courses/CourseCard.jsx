@@ -26,17 +26,7 @@ const CourseCard = ({ course }) => {
   return (
     <div
       ref={cardRef}
-      className="rounded-[14px] border border-bg-border bg-bg-raised overflow-hidden group transition duration-200 ease-out"
-      onMouseEnter={e => {
-        e.currentTarget.style.transform = 'scale(1.015)'
-        e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.4)'
-        e.currentTarget.style.borderColor = 'var(--color-purple-border)'
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.transform = 'scale(1)'
-        e.currentTarget.style.boxShadow = 'none'
-        e.currentTarget.style.borderColor = 'var(--color-bg-border)'
-      }}
+      className="rounded-[14px] border border-bg-border bg-bg-raised overflow-hidden group hover:border-purple-border hover:scale-[1.01] hover:shadow[0 8px 32px rgba(0,0,0,0.4)] transition-all duration-200"
     >
       {/* top */}
       <div className="relative bg-bg-surface p-6 border-b border-bg-border overflow-hidden">

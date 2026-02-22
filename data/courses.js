@@ -26,7 +26,7 @@ const courses = [
   {
     id: 3,
     title: "UI/UX Design Fundamentals",
-    instructor: "Kofi Mensah",
+    instructor: "Kola Olagoke",
     category: "Design",
     duration: "6 hours",
     description: "Master the principles of user-centred design. Covers wireframing, prototyping, and Figma from the ground up. You'll leave with a portfolio-ready case study.",
@@ -62,7 +62,7 @@ const courses = [
   {
     id: 6,
     title: "TailwindCSS Mastery",
-    instructor: "Kofi Mensah",
+    instructor: "Daniel T. Dada",
     category: "Web Development",
     duration: "4 hours",
     description: "Go from zero to confident with TailwindCSS. Build responsive, well-designed UIs without writing a single line of custom CSS. Covers v4 and real project walkthroughs.",
@@ -206,7 +206,7 @@ const courses = [
   {
     id: 18,
     title: "Prompt Engineering for Developers",
-    instructor: "Amara Nwosu",
+    instructor: "Claude",
     category: "AI & Machine Learning",
     duration: "4 hours",
     description: "Learn to design, test, and iterate on prompts for large language models. Covers zero-shot, few-shot, chain-of-thought techniques, and integrating LLMs into production applications.",
