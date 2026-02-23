@@ -52,21 +52,24 @@ const Home = () => {
   const testimonials = [
     {
       quote:
-        "Île-Ìwé is the first platform that made me feel like I was actually building, not just following along.",
+        "Île-Ìwé is the first platform that made me feel like I was actually building, not just following along. The project structure changed how I think about learning entirely.",
       name: "Jon O.",
       role: "Backend Developer",
+      tag: "Backend Development",
     },
     {
       quote:
-        "Finished the Product Design track in 3 weeks. Got a job offer two months later. The projects made the difference.",
+        "Finished the Product Design track in 3 weeks. Got a job offer two months later.",
       name: "Nabil A.",
       role: "Product Designer",
+      tag: "Design",
     },
     {
       quote:
         "The design of the platform alone made me trust the quality of the content. Knew it was serious from the start.",
       name: "Dayo S.",
       role: "Frontend Developer",
+      tag: "Web Development",
     },
   ];
   return (
@@ -316,12 +319,7 @@ const Home = () => {
                 >
                   {number}
                 </p>
-                <p
-                  className="font-dm-mono text-[11px] tracking-[0.15em] mb-6 relative z-10 "
-                  style={{
-                    color: "var(--color-purple-border)",
-                  }}
-                >
+                <p className="font-dm-mono text-[11px] tracking-[0.15em] mb-6 relative z-10 text-purple-border">
                   {number}
                 </p>
                 <h3 className="font-syne font-bold text-xl text-text-primary mb-3 relative z-10">
@@ -336,7 +334,7 @@ const Home = () => {
         </section>
 
         {/* ── Testimonials ── */}
-        <section className="pb-10">
+        <section className="fade-up pb-10" style={{ animationDelay: "60ms" }}>
           <div className="mb-14">
             <div className="flex items-center gap-2 mb-3">
               <div className="h-px w-6 bg-purple-vivid" />
@@ -349,40 +347,92 @@ const Home = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {testimonials.map(({ quote, name, role }, i) => (
-              <div
-                key={name}
-                className="fade-up relative rounded-2xl border border-bg-border bg-bg-raised p-8 flex flex-col justify-between gap-8 overflow-hidden hover:border-purple-border hover:scale-[1.01] transition-all duration-200"
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-stretch">
+            {/* Hero quote — 60% (3 of 5 cols) */}
+            <div className="md:col-span-3 relative rounded-2xl border border-bg-border bg-bg-raised p-10 flex flex-col justify-between overflow-hidden min-h-72">
+              {/* Decorative large quote mark */}
+              <span
+                className="absolute -top-4 -left-2 font-syne font-extrabold leading-none select-none pointer-events-none"
                 style={{
-                  animationDelay: `${i * 60}ms`,
+                  fontSize: "160px",
+                  color: "transparent",
+                  WebkitTextStroke: "1px rgba(157,23,77,0.08)",
                 }}
+                aria-hidden="true"
               >
-                <span
-                  className="absolute top-4 right-6 font-syne font-extrabold leading-none select-none pointer-events-none text-[80px]"
-                  style={{ color: "rgba(157,23,77,0.08)" }}
-                  aria-hidden="true"
-                >
-                  &quot;
-                </span>
-                <p className="text-text-secondary text-sm font-light leading-relaxed relative z-10">
-                  &quot;{quote}&quot;
-                </p>
-                <div className="flex items-center gap-3 relative z-10">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-syne font-bold text-sm bg-purple-soft border border-purple-border text-[#c4748e]">
-                    {name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-syne font-semibold text-sm text-text-primary">
-                      {name}
-                    </p>
-                    <p className="font-dm-mono text-[10px] text-text-muted tracking-[0.05em]">
-                      {role}
-                    </p>
-                  </div>
+                &ldquo;
+              </span>
+
+              {/* Tag */}
+              <span
+                className="inline-flex self-start font-dm-mono text-[10px] tracking-[0.12em] uppercase px-2.5 py-1 rounded border border-purple-border bg-purple-soft mb-6 relative z-10"
+                style={{ color: "#c4748e" }}
+              >
+                {testimonials[0].tag}
+              </span>
+
+              <blockquote className="font-dm-sans text-lg font-light text-text-primary leading-relaxed relative z-10 flex-1">
+                &ldquo;{testimonials[0].quote}&rdquo;
+              </blockquote>
+
+              <div className="flex items-center gap-4 mt-8 pt-6 border-t border-bg-border relative z-10">
+                <div className="h-px flex-1 bg-bg-border" />
+                <div className="text-right">
+                  <p className="font-syne font-semibold text-sm text-text-primary">
+                    {testimonials[0].name}
+                  </p>
+                  <p className="font-dm-mono text-[10px] text-text-muted tracking-[0.05em]">
+                    {testimonials[0].role}
+                  </p>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* 2 stacked quotes — 40% (2 of 5 cols) */}
+            <div className="md:col-span-2 flex flex-col gap-4">
+              {testimonials.slice(1).map(({ quote, name, role, tag }, i) => (
+                <div
+                  key={name}
+                  className="fade-up relative rounded-2xl border border-bg-border bg-bg-raised p-7 flex flex-col justify-between overflow-hidden flex-1"
+                  style={{
+                    animationDelay: `${i * 80 + 100}ms`,
+                    minHeight: "140px",
+                  }}
+                >
+                  <span
+                    className="inline-flex self-start font-dm-mono text-[10px] tracking-[0.12em] uppercase px-2.5 py-1 rounded border border-purple-border bg-purple-soft mb-6 relative z-10"
+                    style={{ color: "#c4748e" }}
+                  >
+                    {tag}
+                  </span>
+                  <span
+                    className="absolute top-2 right-4 font-syne font-extrabold leading-none select-none pointer-events-none text-[56px]"
+                    style={{ color: "rgba(157,23,77,0.06)" }}
+                    aria-hidden="true"
+                  >
+                    &rdquo;
+                  </span>
+
+                  <blockquote className="font-dm-sans text-sm font-light text-text-secondary leading-relaxed relative z-10">
+                    &ldquo;{quote}&rdquo;
+                  </blockquote>
+
+                  <div className="flex items-center justify-between mt-5 pt-4 border-t border-bg-border relative z-10">
+                    <div>
+                      <p className="font-syne font-semibold text-sm text-text-primary">
+                        {name}
+                      </p>
+                      <p className="font-dm-mono text-[10px] text-text-muted tracking-[0.05em]">
+                        {role}
+                      </p>
+                    </div>
+                    <span className="font-dm-mono text-[9px] tracking-widest uppercase text-text-muted border border-bg-border rounded px-2 py-0.5 hidden sm:block">
+                      {tag}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </div>
