@@ -23,7 +23,7 @@ const CoursePage = () => {
     }
     // for everytime the search bar is typed into, resets the category selected to default and updates query to what is in the search bar
 
-    const filteredCourses = courses.filter((c) => {
+    const filteredCourses = courses.filter((course) => {
         const matchesCategory = active === 'All' || course.category === active
         const q = query.toLowerCase().trim()
         const matchesQuery = !q ||
