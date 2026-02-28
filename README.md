@@ -62,4 +62,4 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Status
 
-Week 2 of 4 complete.
+Week 3 of 4 complete.
