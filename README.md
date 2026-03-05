@@ -30,6 +30,7 @@ ile-iwe/
 │   ├── courses/
 │   │   ├── CourseCard.jsx
 │   │   └── CourseDetail.jsx
+│   │   └── CourseGrid.jsx
 │   ├── layout/
 │   │   ├── Header.jsx
 │   │   └── Footer.jsx
