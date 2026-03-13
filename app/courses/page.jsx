@@ -27,9 +27,9 @@ const CoursePage = () => {
         const matchesCategory = active === 'All' || course.category === active
         const q = query.toLowerCase().trim()
         const matchesQuery = !q ||
-            c.title.toLowerCase().includes(q) ||
-            c.instructor.toLowerCase().includes(q) ||
-            c.keywords.some((keyword) => keyword.toLowerCase().includes(q))
+            course.title.toLowerCase().includes(q) ||
+            course.instructor.toLowerCase().includes(q) ||
+            course.keywords.some((keyword) => keyword.toLowerCase().includes(q))
         return matchesCategory && matchesQuery
     })
     // filters through courses and keeps the ones that passes matchesCategory && matchesQuery 
